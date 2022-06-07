@@ -1,0 +1,10 @@
+<h1 class="w3-blue">Edição de livros</h1>
+<form class="w3-container">
+    <div><label>Título:</label><input type="text" id="txtTitulo" name="titulo" class="w3-input w3-border w3-round" [(ngModel)]="Livro.Titulo"></div>
+    <div><label>Autor:</label><input type="text" id="txtAutor" name="autor" class="w3-input w3-border w3-round" [(ngModel)]="Livro.Autor"></div>
+    <div><label>Páginas:</label><input type="text" id="txtPaginas"  name="numeroDePaginas" class="w3-input w3-border w3-round" [(ngModel)]="Livro.NumeroDePaginas"></div>
+    <div class="w3-padding">
+        <button type="button" id="btnAlterar" class="w3-btn w3-blue" (click)="update()">Alterar</button>
+        <button type="button" id="btnVoltar" class="w3-btn w3-blue" (click)="goToIndex()">Voltar</button>
+    </div>
+</form>

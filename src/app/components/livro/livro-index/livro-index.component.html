@@ -1,0 +1,36 @@
+<h1 class="w3-blue">Lista de Livros</h1>
+<form class="w3-margin">
+  <label>Id</label><input type="text" id="txtSearchId" name="id" [(ngModel)]="SearchId"/>
+  <button
+    id="btnPesquisar"
+    type="button"
+    class="w3-btn w3-blue"
+    (click)="search()"
+  >
+    Pesquisar
+  </button>
+  <button
+    id="btnNovo"
+    type="button"
+    class="w3-btn w3-blue"
+    (click)="goToCreate()"
+  >
+    Novo
+  </button>
+</form>
+<table id="tbLivros" class="w3-table-all">
+  <tr>
+    <th>id</th>
+    <th>Titulo</th>
+    <th>Autor</th>
+    <th>PAginas</th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let livro of Livros">
+    <td><a href="/livros/livro-edit/{{livro.Id}}">{{livro.Id}}</a></td>
+    <td>{{livro.Titulo}}</td>
+    <td>{{livro.Autor}}</td>
+    <td>{{livro.NumeroDePaginas}}</td>
+    <td class="w3-btn"><a (click)="confirmDelete(livro.Id)" >Excluir</a></td>
+</tr> 
+</table>
